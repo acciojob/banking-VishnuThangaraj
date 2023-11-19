@@ -16,8 +16,24 @@ public class BankAccount {
         //Each digit of an account number can lie between 0 and 9 (both inclusive)
         //Generate account number having given number of 'digits' such that the sum of digits is equal to 'sum'
         //If it is not possible, throw "Account Number can not be generated" exception
+        if(!generateRec(digits, sum))
+            throw new Exception("Account Number can not be generated");
 
         return null;
+    }
+
+    public boolean generateRec(int digits, int sum){
+        if(digits == 0 && sum == 0) return true;
+        if(digits <= 0 || sum <= 0) return false;
+
+        boolean result = false;
+
+        for(int num=0; num<=9; num++){
+            result = generateRec(digits-1, sum-num);
+            if(result) break;
+        }
+
+        return result;
     }
 
     public void deposit(double amount) {
@@ -33,15 +49,8 @@ public class BankAccount {
         this.balance -= amount;
     }
 
-    public String getName() {
-        return name;
-    }
-
     public double getBalance() {
         return balance;
     }
 
-    public double getMinBalance() {
-        return minBalance;
-    }
 }
