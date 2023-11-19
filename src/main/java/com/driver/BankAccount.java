@@ -49,8 +49,15 @@ public class BankAccount {
         this.balance -= amount;
     }
 
+    public String getName() {
+        return name;
+    }
+
     public double getBalance() {
         return balance;
     }
 
+    public double getMinBalance() {
+        return minBalance;
+    }
 }

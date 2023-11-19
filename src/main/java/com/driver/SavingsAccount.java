@@ -34,4 +34,11 @@ public class SavingsAccount extends BankAccount{
         return amount;
     }
 
+    public double getRate() {
+        return rate;
+    }
+
+    public double getMaxWithdrawalLimit() {
+        return maxWithdrawalLimit;
+    }
 }
