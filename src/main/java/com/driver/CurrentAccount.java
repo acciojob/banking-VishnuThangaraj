@@ -34,7 +34,6 @@ public class CurrentAccount extends BankAccount{
                 break;
             }
         }
-
         if(validID){
             tradeLicenseId = "";
             for(int index=0; index<letter.length; index++){
